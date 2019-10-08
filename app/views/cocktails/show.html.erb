@@ -12,3 +12,4 @@
 </ul>
 
 <%= link_to 'All cocktails', cocktails_path, class: "btn btn-success" %>
+<%= link_to 'Delete This cocktail', cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" } %>
