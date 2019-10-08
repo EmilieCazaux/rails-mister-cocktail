@@ -40,7 +40,19 @@
 .card-category a {
   color: gray;
   //font-weight: lighter;
+  margin-left: 30px;
 
+}
+
+.card-description {
+  display: flex;
+  align-items: center;
+
+  .far {
+    color: gray;
+    margin: auto;
+    margin-left: 85px;
+  }
 }
 
 
