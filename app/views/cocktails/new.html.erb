@@ -1,8 +1,21 @@
+<div class="container py-4 d-flex">
+  <div class = "row ">
+   <div class="col-sm-12 col-md-6 col-lg-6">
+    <h2 class="header">My new recipe</h2>
+    <div class ="simple_form">
+      <%= simple_form_for @cocktail do |f| %>
+      <%= f.input :name, label: false, :placeholder => "My new cocktail name" %>
+      <%= f.input :photo %>
+      <%= f.submit class: "btn btn-success" %>
+      <% end %>
 
-<%= simple_form_for @cocktail do |f| %>
-<%= f.input :name %>
-<%= f.input :photo %>
-<%= f.submit class: "btn btn-primary" %>
-<% end %>
-
-<%= link_to 'All cocktails', cocktails_path, class: "btn btn-success" %>
+    </div>
+      <div class="button">
+        <%= link_to 'See all of my cocktails', cocktails_path, class: "btn btn-light" %>
+      </div>
+  </div>
+  <div class="col-sm-12 col-md-6 col-lg-6">
+    <img class ="img-new-event" src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1301&q=80">
+  </div>
+</div>
+</div>
