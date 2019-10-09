@@ -1,15 +1,34 @@
+<%= render 'shared/navbar' %>
 
-<h1>My <%= @cocktail.name %></h1>
-<%= link_to "Add a new ingredient", new_cocktail_dose_path(@cocktail) %>
 
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-  <li><%= '60ml of Gin' %></li>
-  <li><%= dose.ingredient.name %></li>
-  <li><%= dose.description %></li>
-<%= link_to 'Delete This Ingredient', dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %>
-  <% end %>
-</ul>
+<div class="container py-2 d-flex">
+  <div class = "row ">
+   <div class="col-sm-12 col-md-6 col-lg-6">
+    <div style="text-align: -webkit-center";>
+    <h2 class="header">My <%= @cocktail.name %></h2>
 
-<%= link_to 'All cocktails', cocktails_path, class: "btn btn-success" %>
-<%= link_to 'Delete This cocktail', cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" } %>
+       <li><%= '60ml of Gin' %></li>
+      <% @cocktail.doses.each do |dose| %>
+      <li><%= dose.ingredient.name %> <%= dose.description %>
+      <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
+    <i class="far fa-trash-alt"></i>
+    <% end %>
+    </li>
+
+      <% end %>
+    <%= link_to "Add a new ingredient", new_cocktail_dose_path(@cocktail) %>
+    </div>
+
+    <div class="button">
+      <%= link_to 'See all of my cocktails', cocktails_path, class: "btn btn-light" %>
+    </div>
+  </div>
+
+  <div class="col-sm-12 col-md-6 col-lg-6">
+    <img class ="img-new-event" src= <%= @cocktail.photo %>>
+  </div>
+</div>
+</div>
+
+
+
